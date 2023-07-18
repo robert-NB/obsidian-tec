@@ -1,0 +1,76 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+     <meta charset="UTF-8">
+     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+     <meta http-equiv="X-UA-Compatible" content="ie=edge">
+     <title>Citas</title>
+     <link href="https://fonts.googleapis.com/css?family=Open+Sans&display=swap" rel="stylesheet"> 
+     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-9ndCyUaIbzAi2FUVXJi0CjmCapSmO7SnpJef0486qhLnuZ2cdeRhO02iuK6FUUVM" crossorigin="anonymous">
+     <link rel="shortcut icon" href="../images/cerebro1.png">
+     <link rel="stylesheet" href="./css/styles.css">
+</head>
+<body>
+     <div class="contenedor" id="general">
+          <header> <h6 class="migas right">Te encuentras en: Inicio > Citas</h6></header>
+          <hr class="bordes">
+          <h2>Agenda de Citas</h2>
+
+          <div>
+            <div class="form-check">
+                <div class="form-check">
+                    <input class="form-check-input" type="radio" name="flexRadioDefault" id="manyana">
+                    <label class="form-check-label" for="flexRadioDefault1">
+                      Horario de mañana
+                    </label>
+                  </div>
+                  <div class="form-check">
+                    <input class="form-check-input" type="radio" name="flexRadioDefault" id="tarde" checked>
+                    <label class="form-check-label" for="flexRadioDefault2">
+                      Horario de tarde
+                    </label>
+                  </div>
+               </div>
+          </div>
+          <form action="guardar_cita.php" method="POST" id="morning">
+            <div class="mb-3">
+              <label for="fecha" class="form-label">Fecha:</label>
+              <input type="date" name="fecha"  class="form-control"required><br>
+            </div>
+            <div class="mb-3">
+              <label for="hora" class="form-label">Citas por la mañana:</label>
+              <input type="time" name="hora"  class="form-control" min="09:00" max="12:00" step="3600" required><br>
+            </div>
+            <div class="mb-3">
+              <label for="nombre" class="form-label">Nombre:</label>
+              <input type="text" name="nombre"  class="form-control"required><br>
+            </div>
+            <input type="submit" class="btn-link activo" value="Guardar Cita">
+          </form>
+          <form action="guardar_cita.php" method="POST" hidden id="afternoon">
+               <label for="fecha" class="form-label">Fecha:</label>
+               <input type="date" name="fecha"  class="form-control"required><br>
+     
+               <label for="hora" class="form-label">Citas por la tarde:</label>
+               <input type="time" name="hora"  class="form-control" min="16:00" max="20:00"  step="3600" required><br>
+
+               <label for="nombre" class="form-label">Nombre:</label>
+               <input type="text" name="nombre"  class="form-control"required><br>
+     
+               <input type="submit" class="btn-link activo" value="Guardar Cita">
+          </form>
+          <h2>Citas Programadas:</h2>
+          <div id="citas-container">
+              <!-- Aquí se cargarán las citas desde el backend -->
+          </div> 
+          <main>
+            <div id="botones"></div>
+          </main>
+     </div>
+    
+   <script src="https://cdn.jsdelivr.net/npm/typed.js@2.0.12"></script>
+   <script src="../js/botones.js"></script>
+   <script src="../js/header.js"></script>
+   <script src="../js/mostrarCitas.js"></script>
+   <script src="scripts.js"></script>
+</html>
